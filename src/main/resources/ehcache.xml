@@ -1,0 +1,51 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
+        xsi:schemaLocation="
+            http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
+            http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+    <cache alias="ArtistAlbums">
+        <key-type>java.lang.String</key-type>
+        <value-type>com.parth.plugsurfing.dto.MusicArtistResponseDTO</value-type>
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <resources>
+            <heap unit="MB">100</heap>
+            <offheap unit="MB">150</offheap>
+        </resources>
+    </cache>
+    <cache alias="CoverImage">
+        <key-type>java.lang.String</key-type>
+        <value-type>java.lang.String</value-type>
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <resources>
+            <heap unit="MB">100</heap>
+            <offheap unit="MB">150</offheap>
+        </resources>
+    </cache>
+    <cache alias="WikiData">
+        <key-type>java.lang.String</key-type>
+        <value-type>com.parth.plugsurfing.dto.MusicArtistWikiResponseDTO</value-type>
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <resources>
+            <heap unit="entries">10000</heap>
+            <offheap unit="MB">100</offheap>
+        </resources>
+    </cache>
+    <cache alias="Wikipedia">
+        <key-type>java.lang.String</key-type>
+        <value-type>com.parth.plugsurfing.dto.WikipediaResponseDTO</value-type>
+        <expiry>
+            <ttl unit="minutes">10</ttl>
+        </expiry>
+        <resources>
+            <heap unit="entries">10000</heap>
+            <offheap unit="MB">100</offheap>
+        </resources>
+    </cache>
+</config>
